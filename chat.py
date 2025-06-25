@@ -1,10 +1,13 @@
-from openai import OpenAI
 import streamlit as st
 
+# create a title for the webpage
 st.title("Chat")
 
+from openai import OpenAI
+#creates an object that will call to OpenAI
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
+# Checking Streamlit Session State for AI Info
 if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = "gpt-3.5-turbo"
 
